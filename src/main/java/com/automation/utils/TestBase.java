@@ -44,4 +44,12 @@ public class TestBase {
         logger.info("Driver init using TestBase Constructor :: "+getClass());
         PageFactory.initElements(getWebDriver(),this);
     }
+
+    public void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+            logger.info("Driver closed successfully.");
+        }
+    }
 }
